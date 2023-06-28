@@ -6,7 +6,6 @@ import ApiError from "../exceptions/api-error.js";
 import UserDTO from "../dtos/user-dto.js";
 import TokenService from "./token.service.js";
 class UserService {
-<<<<<<< HEAD
     async registration(prop) {
         const candidate = await UserModule.getOne('email', prop.email)
         if(candidate.length !== 0){
@@ -21,24 +20,6 @@ class UserService {
         const registration = await UserModule.create(body)
         //await MailService.sendActivationMail(body.email, `${process.env.API_URL}/api/activate/${activationLink}`)
         return true
-=======
-  async registration(prop) {
-    const candidate = await UserModule.getOne("email", prop.email);
-    if (candidate.length !== 0) {
-      throw ApiError.BadRequest(
-        `This email address ${prop.email} is already in use`
-      );
->>>>>>> 001b5b2 (turn off mail and origin api)
-    }
-    const body = { ...prop };
-    const hashPassword = await bcrypt.hash(prop.password, 3);
-    // const activationLink = v4()
-    body.password = hashPassword;
-    body.activationLink = activationLink;
-    body.position = "user";
-    await UserModule.create(body);
-    // await MailService.sendActivationMail(body.email, `${process.env.API_URL}/api/activate/${activationLink}`)
-    return true;
   }
 
   async login(prop) {
@@ -85,9 +66,4 @@ class UserService {
     return candidate;
   }
 }
-
-<<<<<<< HEAD
-export default new UserService()
-=======
 export default new UserService();
->>>>>>> 001b5b2 (turn off mail and origin api)
