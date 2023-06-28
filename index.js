@@ -12,6 +12,7 @@ app.use(
   cors({
     credentials: true,
     // origin: process.env.CLIENT_URL,
+    //develop
   })
 );
 app.use("/api", router);
