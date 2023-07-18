@@ -15,7 +15,7 @@ class UserService {
         const hashPassword = await bcrypt.hash(prop.password, 3)
         //const activationLink = v4()
         body.password = hashPassword
-        body.activationLink = activationLink
+        body.activationLink = "activationLink"
         body.position = 'user'
         const registration = await UserModule.create(body)
         //await MailService.sendActivationMail(body.email, `${process.env.API_URL}/api/activate/${activationLink}`)
