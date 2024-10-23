@@ -1,0 +1,26 @@
+{
+"gender": ["woman", "man"],
+"type": ["shoes", "clothing"],
+"under_type_clothing": [
+    "coats",
+    "sweatshirts_and_sweaters",
+    "winter_coats",
+    "jeans",
+    "T_shirts",
+    "navy",
+    "shirts",
+    "trousers",
+    "suits",
+    "underwear"],
+"under_type_shoes": [
+    "winter_boots",
+    "lace_up_shoes",
+    "sneakers_and_sneakers",
+    "shoes",
+    "oksfordy",
+    "moccasins",
+    "boots",
+    "business_footwear",
+    "sports_shoes",
+    "outdoor_footwear"]
+}
