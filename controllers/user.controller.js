@@ -16,7 +16,7 @@ class UserController {
         maxAge: 30 * 24 * 60 * 60 * 1000,
       });
       delete userData.refreshToken;
-      return res.json(userData);
+      res.status(200).json(userData);
     } catch (e) {
       next(e);
     }
