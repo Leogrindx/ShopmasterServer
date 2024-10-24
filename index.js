@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import errorMiddleware from "./middlewares/error-middleware.js";
 dotenv.config();
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
