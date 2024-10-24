@@ -43,10 +43,11 @@ class ItemController {
               .join(",")})`
         )
         .join(" ")} ${
-        req.query.price &&
-        `${valuesSql.length === 0 ? "WHERE" : "AND"} price > ${
-          req.query.price[0]
-        } AND price < ${req.query.price[1]}`
+        req.query.price
+          ? `${valuesSql.length === 0 ? "WHERE" : "AND"} price > ${
+              req.query.price[0]
+            } AND price < ${req.query.price[1]}`
+          : ""
       }`;
 
       const items = await UniversalModele.customSQL(sqlold, []);
